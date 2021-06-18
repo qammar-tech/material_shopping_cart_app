@@ -10,8 +10,6 @@ const ProductsPage = () => {
   const dispatch = useDispatch();
   const something_else = useSelector((state) => state.indexReducer);
 
-  console.log('this is something: ', something_else);
-
   useEffect(() => {
     dispatch(getTasks());
   }, []);

@@ -13,7 +13,7 @@ export const getTasks = createAsyncThunk('/test', async (values, thunkAPI) => {
     const response = await axios.get('/v1/products');
     return response.data
   } catch (error) {
-    console.log('this is the error: ', error)
+    console.log('this is the error: ', { error })
 
     return thunkAPI.rejectWithValue({
       err: error.response.data.message,

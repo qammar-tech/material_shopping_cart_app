@@ -13,7 +13,9 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     height: '100%',
     width: '100vw',
-    background: 'lightgrey'
+    background: 'lightgrey',
+    margin: 0,
+    padding: 0
   },
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
@@ -97,13 +99,10 @@ const App = ({ children }) => {
   const { main_drawer_open } = select || {};
 
   useEffect(() => {
-    console.log({ history })
-    selectionFunction(history.location.pathname)
   }, []);
 
   const selectionFunction = (path) => {
     const splitPath = path.split('/');
-    console.log({ lastEord: splitPath[splitPath.length - 1] });
     if (splitPath[splitPath.length - 1] === 'main') {
       setSelectedIndex(0);
     } else if (splitPath[splitPath.length - 1] === 'products') {
